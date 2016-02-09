@@ -16,6 +16,9 @@
 % 
 % The HpTFs are loaded from the folder "measurements" and the filters can be
 % saved in the folder "compensation_filters".
+% 
+% 
+% This script has been written in Matlab version R2015a.
 
 %********************************************************************************
 % Copyright (c) 2016 Vera Erbes                                                 *
