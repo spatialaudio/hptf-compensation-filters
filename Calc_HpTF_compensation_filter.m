@@ -1,8 +1,8 @@
 % CALCULATE HPTF COMPENSATION FILTERS
 %
-% This script calculates headphone transfer function (HpTF) compensation filters 
-% with high-shelf regularisation in the frequency domain. Confer the following
-% papers for details on this method:
+% This script calculates linear-phase headphone transfer function (HpTF)
+% compensation filters with high-shelf regularisation in the frequency domain.
+% Confer the following papers for details on this method:
 % 
 %  - Schärer, Z. and Lindau, A. (2009): Evaluation of Equalization Methods for
 %    Binaural Synthesis. Proc. of the 126th AES Convention
@@ -59,6 +59,7 @@ all_plots = 0; %1: show all plots for intermediate steps, 0: do not
 
 %% Choose headphones
 %several headphones can be simultaneously selected to be averaged
+%(numbers after _ denote serial numbers/internal numbering)
 HD600           = 1;
 HED415N_1       = 0;
 HED415N_3       = 0;
