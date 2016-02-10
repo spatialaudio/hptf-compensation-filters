@@ -19,3 +19,8 @@ The HpTF measurements have been performed on a KEMAR 45BA dummy head with large 
 As you most likely are not in possession of a headphone with a specific serial number, it is recommended to use the filters containing the term "1Filter" in the file name. These filters are averaged out of measurements of the left and right channel for one or more headphones of the same type, that is the filters for left and right channel are the same.
 
 The term "LRFilter" in the file name denotes compensation filters that are made for a headphone with a specific serial number with different filters for the left and right channel.
+
+## Licenses
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />The data by Matthias Geier and Vera Erbes in this repository is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+The Matlab code by Vera Erbes is licensed under the MIT license. Confer header of [Calc_HpTF_compensation_filter.m](http://github.com/spatialaudio/hptf-compensation-filters/blob/master/Calc_HpTF_compensation_filter.m) for more information on this license.
