@@ -5,7 +5,7 @@ This repository holds HpTF (headphone transfer function) compensation filters fo
 Compensation filters are linear-phase FIR filters of length 2048 samples at a sampling rate of 44.1 kHz calculated with high-shelf regularisation in the frequency domain. Confer the following papers for details on this method:
 * Schärer, Z. and Lindau, A. (2009): Evaluation of Equalization Methods for Binaural Synthesis. Proc. of the 126th AES Convention
 * Norcross, S. G, Soulodre G. A. and Lavoie, M. C. (2004): Distortion Audibility in Inverse Filtering. Proc. of the 117th AES Convention
-* Kirkeby, O., Nelson, P. A., Hamada, H. and Orduna-Bustamante, F. (1998): Fast Deconvolution of Multichannel Systems using Regularization. IEEE Trans. on Speech and Audio Proc. 6(2)
+* Kirkeby, O., Nelson, P. A., Hamada, H. and Orduna-Bustamante, F. (1998): Fast Deconvolution of Multichannel Systems using Regularization. IEEE Trans. on Speech and Audio Proc. 6(2), pp. 189-195
 
 ## HpTF Measurements
 The HpTF measurements have been performed on a KEMAR 45BA dummy head with large ears with a sweep of order 2^19 with bass emphasis at a sampling rate of 44.1 kHz. HpTFs are available for the following headphone types:
