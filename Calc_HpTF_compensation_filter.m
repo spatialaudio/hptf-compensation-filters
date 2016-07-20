@@ -12,7 +12,7 @@
 % 
 %  - Kirkeby, O., Nelson, P. A., Hamada, H. and Orduna-Bustamante, F. (1998):
 %    Fast Deconvolution of Multichannel Systems using Regularization. IEEE Trans.
-%    on Speech and Audio Proc. 6(2)
+%    on Speech and Audio Proc. 6(2), pp. 189-195
 % 
 % The HpTFs are loaded from the folder "measurements" and the filters can be
 % saved in the folder "compensation_filters".
