@@ -76,133 +76,117 @@ meas_path = 'measurements/'; %main path
 hp_path = {}; %collect measurement paths for each headphone
 
 headphones = {}; %collect headphone names
-N = 10; %number of measurements per channel
+N = 10; %number of measurements per headphone and channel
+
+%collect indices for selected measurements
+idxl = [];
+idxr = [];
 
 if HD600
     hp_path{end+1} = [meas_path 'HD600/2014-08-12_18-31-56_pass%02d.mat'];
     %select measurements of left and right channel
-    idxl = [1 2 3 4 5 6 7 8 9 10]; 
-    idxr = [1 2   4 5 6 7 8 9 10];
+    idxl_tmp = [1 2 3 4 5 6 7 8 9 10]; 
+    idxr_tmp = [1 2   4 5 6 7 8 9 10];
+    %concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)]; 
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'HD600';
 end
 
 if HED415N_1
     hp_path{end+1} = [meas_path 'HED415N_1/2014-08-12_19-34-00_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
-        idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)]; 
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
+    idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
+	%concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)]; 
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'HED415N_1';
 end
 
 if HED415N_3
     hp_path{end+1} = [meas_path 'HED415N_3/2014-08-12_19-53-45_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1   3 4 5 6   8 9 10];
-        idxr_tmp = [1   3 4 5 6   8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1   3 4 5 6   8 9 10];
+    idxr_tmp = [1   3 4 5 6   8 9 10];
+	%concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'HED415N_3';
 end
 
 if HED415N_4
     hp_path{end+1} = [meas_path 'HED415N_4/2014-08-12_19-59-18_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1   3 4 5 6 7 8 9 10];
-        idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1   3 4 5 6 7 8 9 10];
+    idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
+	%concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'HED415N_4';
 end
 
 if K271
     hp_path{end+1} = [meas_path 'K271/2014-08-12_18-20-09_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1 2 3 4 5 6 7   9   ];
-        idxr_tmp = [1 2 3 4     7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1 2 3 4 5 6 7   9   ];
+    idxr_tmp = [1 2 3 4     7 8 9 10];
+    %concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'K271';
 end
 
 if K601_001918
     hp_path{end+1} = [meas_path 'K601_001918/2014-08-12_19-04-08_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
-        idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
+    idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
+    %concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'K601_001918';
 end
 
 if K601_001935
     hp_path{end+1} = [meas_path 'K601_001935/2014-08-12_19-09-44_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
-        idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
+    idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
+    %concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'K601_001935';
 end
 
 if K601_14539
     hp_path{end+1} = [meas_path 'K601_14539/2014-08-12_18-43-25_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
-        idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
+    idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
+    %concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'K601_14539';
 end
 
 if K612_PRO_000744
     hp_path{end+1} = [meas_path 'K612_PRO_000744/2014-08-12_19-21-42_pass%02d.mat'];
     %select measurements of left and right channel
-        idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
-        idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
-    if exist('idxl') %concatenate indices when several headphones are selected
-        idxl = [idxl idxl_tmp+length(idxl)];
-        idxr = [idxr idxr_tmp+length(idxr)];
-    else
-        idxl = idxl_tmp;
-        idxr = idxr_tmp;
-    end
+    idxl_tmp = [1 2 3 4 5 6 7 8 9 10];
+    idxr_tmp = [1 2 3 4 5 6 7 8 9 10];
+    %concatenate indices when several headphones are selected
+    idxl = [idxl idxl_tmp+N*length(headphones)];
+    idxr = [idxr idxr_tmp+N*length(headphones)];
+    %add headphone name
     headphones{end+1} = 'K612_PRO_000744';
 end
 
@@ -216,13 +200,13 @@ for n = 1:length(hp_path)
         hr_raw(:,idx) = data.ir(:,2);
     end
 end
-N = size(hl_raw,2); %new number of measurements (for more than one headphone)
+N_all = size(hl_raw,2); %new number of measurements (for more than one headphone)
 fs = data.fs; %sampling frequency
 
 %% Window and select IRs
 %normalise all IRs (for each headphone separately)
-for n = 0:N/10-1
-    idx = (1:10)+n*10;
+for n = 0:N_all/N-1
+    idx = (1:N)+n*N;
     maxvalue(n+1) = max(max(abs([hl_raw(:,idx); hr_raw(:,idx)])));
     hl_raw(:,idx) = hl_raw(:,idx)./maxvalue(n+1);
     hr_raw(:,idx) = hr_raw(:,idx)./maxvalue(n+1);
@@ -232,9 +216,9 @@ end
 win = blackmanharris(wlen);
 win(1:wlen/2) = 1;
 win = [win; zeros(clen-wlen,1)];
-hl_win = zeros(clen,N); %preallocation
-hr_win = zeros(clen,N); %preallocation
-for n = 1:N
+hl_win = zeros(clen,N_all); %preallocation
+hr_win = zeros(clen,N_all); %preallocation
+for n = 1:N_all
     hl_win(:,n) = hl_raw(1:clen,n).*win;
     hr_win(:,n) = hr_raw(1:clen,n).*win;
 end
@@ -245,7 +229,7 @@ if all_plots
     %Plot all unprocessed HpIRs and window
     figure
     subplot(1,2,1)
-        for n = 1:N
+        for n = 1:N_all
             plot(db(abs(hl_raw(:,n)))), hold on, grid on
         end
         plot(db(abs(win)),'k')
@@ -253,7 +237,7 @@ if all_plots
         axis([0 length(hl_raw) -200 0])
         title('Raw impulse responses (left) and window')
     subplot(1,2,2)
-        for n = 1:N
+        for n = 1:N_all
             plot(db(abs(hr_raw(:,n)))), hold on, grid on
         end
         plot(db(abs(win)),'k')
@@ -265,11 +249,11 @@ if all_plots
     fraw = (0:size(hl_raw,1)-1)/size(hl_raw,1)*fs; %freq. vector for raw IRs
     figure
     subplot(1,2,1)
-        for n = 1:N
+        for n = 1:N_all
             ph1 = semilogx(fraw,db(abs(fft(hl_raw(:,n)))),'k');
             hold on, grid on
         end
-        for n = 1:N
+        for n = 1:N_all
             ph2 = semilogx(f,db(abs(fft(hl_win(:,n)))),'r');
             hold on, grid on
         end
@@ -278,11 +262,11 @@ if all_plots
         legend([ph1 ph2],'unprocessed','windowed','Location','SW')
         title('Unprocessed and windowed HpTFs (left)')
     subplot(1,2,2)
-        for n = 1:N
+        for n = 1:N_all
             ph1 = semilogx(fraw,db(abs(fft(hr_raw(:,n)))),'k');
             hold on, grid on
         end
-        for n = 1:N
+        for n = 1:N_all
             ph2 = semilogx(f,db(abs(fft(hr_win(:,n)))),'r');
             hold on, grid on
         end
@@ -300,7 +284,7 @@ if all_plots
     %Plot all and selected HpTFs in different colours
     figure
     subplot(1,2,1)
-        for n = 1:N
+        for n = 1:N_all
             ph1(n) = semilogx(f,db(abs(fft(hl_win(:,n)))));
             hold on, grid on
         end 
@@ -310,7 +294,7 @@ if all_plots
         end
         xlabel('frequency in Hz'), ylabel('amplitude in dB')
         axis([10 fs/2 -40 20])
-        if N == 10
+        if N_all == 10
             legend([ph1 ph2],'1','2','3','4','5','6','7','8','9','10',...
                 'selected','Location','S')
         else
@@ -318,7 +302,7 @@ if all_plots
         end
         title('All and selected HpTFs (left)')
     subplot(1,2,2)
-        for n = 1:N
+        for n = 1:N_all
             ph1(n) = semilogx(f,db(abs(fft(hr_win(:,n)))));
             hold on, grid on
         end 
@@ -328,7 +312,7 @@ if all_plots
         end
         xlabel('frequency in Hz'), ylabel('amplitude in dB')
         axis([10 fs/2 -40 20])
-        if N == 10
+        if N_all == 10
             legend([ph1 ph2],'1','2','3','4','5','6','7','8','9','10',...
                 'selected','Location','S')
         else
