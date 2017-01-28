@@ -51,7 +51,7 @@ wlen = 1024; %length of window for raw IR measurements
 fc = 6000; %upper corner frequency for regularisation high-shelf
 beta = .4; %regularisation effort
 %1: same filter for left/right ear averaged, 0: different filter for left/right
-one_filter = 0;
+one_filter = 1;
 
 %script preferences
 save_filter = 0; %1: save the resulting filters, 0: do not
